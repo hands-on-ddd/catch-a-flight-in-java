@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.hands-on-ddd</groupId>
+        <artifactId>catch-a-flight-in-java</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>io.hands-on-ddd.modularmonolith</groupId>
+    <artifactId>modular-monolith</artifactId>
+    <name>Modular Monolith</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common</module>
+        <module>shared-kernel</module>
+        <module>account</module>
+        <module>application</module>
+        <module>bestdeal</module>
+        <module>booking</module>
+        <module>engagement</module>
+        <module>order</module>
+        <module>query</module>
+    </modules>
+</project>
