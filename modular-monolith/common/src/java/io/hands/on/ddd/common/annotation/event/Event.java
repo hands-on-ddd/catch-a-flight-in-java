@@ -1,4 +1,4 @@
-package io.hands.on.ddd.common.events;
+package io.hands.on.ddd.common.annotation.event;
 
 /**
  * Domain event marker.
