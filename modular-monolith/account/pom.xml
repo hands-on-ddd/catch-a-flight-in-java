@@ -9,4 +9,16 @@
 
     <artifactId>account</artifactId>
     <name>Modular Monolith :: Account</name>
+    <dependencies>
+        <dependency>
+            <groupId>io.hands-on-ddd.modularmonolith</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.hands-on-ddd.modularmonolith</groupId>
+            <artifactId>shared-kernel</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
