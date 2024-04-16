@@ -9,4 +9,12 @@
 
     <artifactId>shared-kernel</artifactId>
     <name>Modular Monolith :: Shared Kernel</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.hands-on-ddd.modularmonolith</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
