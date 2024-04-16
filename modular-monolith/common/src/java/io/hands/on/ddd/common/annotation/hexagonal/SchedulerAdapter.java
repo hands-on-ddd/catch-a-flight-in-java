@@ -1,4 +1,4 @@
-package io.hands.on.ddd.common.hexagonal;
+package io.hands.on.ddd.common.annotation.hexagonal;
 
 /**
  * Scheduler adapter class marker.

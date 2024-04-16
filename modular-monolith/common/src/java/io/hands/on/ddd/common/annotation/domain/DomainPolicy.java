@@ -1,4 +1,4 @@
-package io.hands.on.ddd.common.domain;
+package io.hands.on.ddd.common.annotation.domain;
 
 /**
  * Domain policy class marker.
