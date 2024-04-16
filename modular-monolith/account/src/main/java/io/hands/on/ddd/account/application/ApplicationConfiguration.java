@@ -1,3 +1,7 @@
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Copyright (c) 2024 Piotr Marat
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 package io.hands.on.ddd.account.application;
 
 import io.hands.on.ddd.account.model.*;
@@ -11,6 +15,10 @@ import org.springframework.context.annotation.Configuration;
 import static io.hands.on.ddd.account.AccountUserConfiguration.MODULE_PREFIX;
 import static io.hands.on.ddd.account.application.ApplicationConfiguration.BeanNames.*;
 import static io.hands.on.ddd.account.infrastructure.InfrastructureConfiguration.BeanNames.ACCOUNT_REPOSITORY;
+
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Implementation
+// -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
  * Spring configuration for application layer in the module.
