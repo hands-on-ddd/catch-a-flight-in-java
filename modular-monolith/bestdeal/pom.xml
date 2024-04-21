@@ -17,8 +17,17 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jdbc</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.hands-on-ddd.modularmonolith</groupId>
             <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.hands-on-ddd.modularmonolith</groupId>
+            <artifactId>account</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
