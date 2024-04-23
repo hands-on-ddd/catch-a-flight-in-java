@@ -1,4 +1,4 @@
-# Catch a Flight
+# Catch a Flight Project
 
 My personal take on:
 _**Event Storming, Domain-Driven Design, Hexagonal Architecture, Modularity, Microservices, Cloud Design Patterns, Data-Oriented Programming, Event-Driven
