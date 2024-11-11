@@ -1,13 +1,10 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model.event;
+package io.hands.on.ddd.account.domain.event;
 
-import io.hands.on.ddd.account.model.UserName;
 import io.hands.on.ddd.common.annotation.event.Event;
 import io.hands.on.ddd.common.event.DomainEvent;
-import io.hands.on.hands.sharedkernel.AccountType;
-import io.hands.on.hands.sharedkernel.Email;
 import io.hands.on.hands.sharedkernel.UserId;
 import java.util.Objects;
 import java.util.UUID;
@@ -17,22 +14,14 @@ import java.util.UUID;
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Account created event.
- * @param eventId     event identifier
- * @param userId      user identifier
- * @param userName    user name
- * @param accountType user type
- * @param email       user email
+ * Account subscription paid event.
+ * @param eventId event identifier
+ * @param userId  user identifier
  */
 @Event
-public record AccountCreated(
-    UUID eventId, UserId userId, UserName userName, AccountType accountType, Email email)
-    implements DomainEvent {
-  public AccountCreated {
+public record AccountSubscriptionPaid(UUID eventId, UserId userId) implements DomainEvent {
+  public AccountSubscriptionPaid {
     Objects.requireNonNull(eventId);
     Objects.requireNonNull(userId);
-    Objects.requireNonNull(userName);
-    Objects.requireNonNull(accountType);
-    Objects.requireNonNull(email);
   }
 }

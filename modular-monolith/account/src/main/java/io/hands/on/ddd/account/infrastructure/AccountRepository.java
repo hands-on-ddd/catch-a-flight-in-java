@@ -3,7 +3,7 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.infrastructure;
 
-import io.hands.on.ddd.account.model.*;
+import io.hands.on.ddd.account.domain.*;
 import io.hands.on.hands.sharedkernel.*;
 import io.pmarat.catchflight.common.annotations.hexagonal.PersistenceAdapter;
 import java.util.Optional;

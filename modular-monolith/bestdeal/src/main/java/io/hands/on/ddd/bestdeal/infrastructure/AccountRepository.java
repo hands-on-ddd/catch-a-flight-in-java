@@ -3,7 +3,7 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.bestdeal.infrastructure;
 
-import io.hands.on.ddd.account.model.*;
+import io.hands.on.ddd.account.domain.*;
 import io.hands.on.ddd.common.annotation.hexagonal.PersistenceAdapter;
 import io.hands.on.hands.sharedkernel.*;
 import java.util.Optional;

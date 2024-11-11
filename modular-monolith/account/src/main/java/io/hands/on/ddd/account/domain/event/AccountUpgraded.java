@@ -1,23 +1,27 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model;
+package io.hands.on.ddd.account.domain.event;
 
-import io.hands.on.ddd.common.annotation.domain.DomainRepository;
-import io.hands.on.ddd.common.annotation.hexagonal.OutboundPort;
+import io.hands.on.ddd.common.annotation.event.Event;
+import io.hands.on.ddd.common.event.DomainEvent;
 import io.hands.on.hands.sharedkernel.UserId;
-import java.util.Optional;
+import java.util.Objects;
+import java.util.UUID;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Functional interface for loading Account from persistence layer.
+ * Account deleted event.
+ * @param eventId event identifier
+ * @param userId  user identifier
  */
-@OutboundPort
-@DomainRepository
-@FunctionalInterface
-public interface FindAccountRepository {
-  Optional<Account> load(UserId userId);
+@Event
+public record AccountUpgraded(UUID eventId, UserId userId) implements DomainEvent {
+  public AccountUpgraded {
+    Objects.requireNonNull(eventId);
+    Objects.requireNonNull(userId);
+  }
 }

@@ -3,11 +3,11 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.application;
 
-import io.hands.on.ddd.account.model.AccountAlreadyUpgradedException;
-import io.hands.on.ddd.account.model.FindAccountRepository;
-import io.hands.on.ddd.account.model.UpdateAccountRepository;
-import io.hands.on.ddd.account.model.event.AccountUpgradeFailed;
-import io.hands.on.ddd.account.model.event.AccountUpgraded;
+import io.hands.on.ddd.account.domain.AccountAlreadyUpgradedException;
+import io.hands.on.ddd.account.domain.FindAccountRepository;
+import io.hands.on.ddd.account.domain.UpdateAccountRepository;
+import io.hands.on.ddd.account.domain.event.AccountUpgradeFailed;
+import io.hands.on.ddd.account.domain.event.AccountUpgraded;
 import io.hands.on.ddd.common.annotation.hexagonal.InboundPort;
 import io.hands.on.ddd.common.annotation.hexagonal.UseCase;
 import io.hands.on.ddd.common.event.DomainEventsPublisher;

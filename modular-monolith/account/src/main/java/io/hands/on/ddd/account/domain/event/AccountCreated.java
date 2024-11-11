@@ -1,37 +1,38 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model;
+package io.hands.on.ddd.account.domain.event;
 
-import io.hands.on.ddd.common.annotation.domain.DomainAggregate;
+import io.hands.on.ddd.account.domain.UserName;
+import io.hands.on.ddd.common.annotation.event.Event;
+import io.hands.on.ddd.common.event.DomainEvent;
 import io.hands.on.hands.sharedkernel.AccountType;
 import io.hands.on.hands.sharedkernel.Email;
 import io.hands.on.hands.sharedkernel.UserId;
-import lombok.Builder;
-import lombok.Getter;
+import java.util.Objects;
+import java.util.UUID;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Account aggregate. Guards all account's invariants.
+ * Account created event.
+ * @param eventId     event identifier
+ * @param userId      user identifier
+ * @param userName    user name
+ * @param accountType user type
+ * @param email       user email
  */
-@Getter
-@Builder
-@DomainAggregate
-public class Account {
-  UserId userId;
-  Email email;
-  Password password;
-  UserName userName;
-  AccountType accountType;
-
-  public void upgradeUser() {
-    switch (accountType) {
-      case PREMIUM ->
-          throw new AccountAlreadyUpgradedException(userId, "Premium user can't be upgraded");
-      case REGULAR -> accountType = AccountType.PREMIUM;
-    }
+@Event
+public record AccountCreated(
+    UUID eventId, UserId userId, UserName userName, AccountType accountType, Email email)
+    implements DomainEvent {
+  public AccountCreated {
+    Objects.requireNonNull(eventId);
+    Objects.requireNonNull(userId);
+    Objects.requireNonNull(userName);
+    Objects.requireNonNull(accountType);
+    Objects.requireNonNull(email);
   }
 }

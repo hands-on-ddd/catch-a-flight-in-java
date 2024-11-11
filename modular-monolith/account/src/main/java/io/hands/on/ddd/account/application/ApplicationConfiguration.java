@@ -7,7 +7,7 @@ import static io.hands.on.ddd.account.AccountUserConfiguration.MODULE_PREFIX;
 import static io.hands.on.ddd.account.application.ApplicationConfiguration.BeanNames.*;
 import static io.hands.on.ddd.account.infrastructure.InfrastructureConfiguration.BeanNames.ACCOUNT_REPOSITORY;
 
-import io.hands.on.ddd.account.model.*;
+import io.hands.on.ddd.account.domain.*;
 import io.hands.on.ddd.common.event.DomainEventsPublisher;
 import io.hands.on.ddd.common.event.JustForwardDomainEventPublisher;
 import org.springframework.beans.factory.annotation.Qualifier;

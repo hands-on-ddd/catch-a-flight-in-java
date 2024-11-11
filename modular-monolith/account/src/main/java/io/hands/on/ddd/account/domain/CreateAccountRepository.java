@@ -1,17 +1,21 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model;
+package io.hands.on.ddd.account.domain;
+
+import io.hands.on.ddd.common.annotation.domain.DomainRepository;
+import io.hands.on.ddd.common.annotation.hexagonal.OutboundPort;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Signals too weak password when user's account is being created.
+ * Functional interface for persisting User aggregate.
  */
-public class PasswordPolicyException extends RuntimeException {
-  public PasswordPolicyException(String message) {
-    super(message);
-  }
+@OutboundPort
+@DomainRepository
+@FunctionalInterface
+public interface CreateAccountRepository {
+  Account create(Account account);
 }

@@ -7,9 +7,9 @@ package io.hands.on.ddd.bestdeal.infrastructure;
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-import io.hands.on.ddd.account.model.Account;
-import io.hands.on.ddd.account.model.Password;
-import io.hands.on.ddd.account.model.UserName;
+import io.hands.on.ddd.account.domain.Account;
+import io.hands.on.ddd.account.domain.Password;
+import io.hands.on.ddd.account.domain.UserName;
 import io.hands.on.hands.sharedkernel.Email;
 import io.hands.on.hands.sharedkernel.UserId;
 

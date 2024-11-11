@@ -1,27 +1,22 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model.event;
+package io.hands.on.ddd.account.domain;
 
-import io.hands.on.ddd.common.annotation.event.Event;
-import io.hands.on.ddd.common.event.DomainEvent;
-import io.hands.on.hands.sharedkernel.UserId;
+import io.hands.on.ddd.common.annotation.domain.DomainValueObject;
 import java.util.Objects;
-import java.util.UUID;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Account deleted event.
- * @param eventId event identifier
- * @param userId  user identifier
+ * Unencrypted password sent by user.
+ * @param value plain text password passed from user interface to use case
  */
-@Event
-public record AccountUpgraded(UUID eventId, UserId userId) implements DomainEvent {
-  public AccountUpgraded {
-    Objects.requireNonNull(eventId);
-    Objects.requireNonNull(userId);
+@DomainValueObject
+public record Password(String value) {
+  public Password {
+    Objects.requireNonNull(value);
   }
 }

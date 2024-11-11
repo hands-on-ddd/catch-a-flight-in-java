@@ -1,22 +1,21 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model;
+package io.hands.on.ddd.account.domain;
 
-import io.hands.on.ddd.common.annotation.domain.DomainValueObject;
-import java.util.Objects;
+import io.hands.on.ddd.common.annotation.domain.DomainRepository;
+import io.hands.on.ddd.common.annotation.hexagonal.OutboundPort;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Unencrypted password sent by user.
- * @param value plain text password passed from user interface to use case
+ * Functional interface for updating Account in persistence layer.
  */
-@DomainValueObject
-public record Password(String value) {
-  public Password {
-    Objects.requireNonNull(value);
-  }
+@OutboundPort
+@DomainRepository
+@FunctionalInterface
+public interface UpdateAccountRepository {
+  void save(Account account);
 }

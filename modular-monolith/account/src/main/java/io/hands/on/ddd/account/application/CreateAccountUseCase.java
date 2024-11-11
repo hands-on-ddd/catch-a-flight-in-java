@@ -3,9 +3,9 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.application;
 
-import io.hands.on.ddd.account.model.*;
-import io.hands.on.ddd.account.model.event.AccountCreated;
-import io.hands.on.ddd.account.model.event.AccountCreationFailed;
+import io.hands.on.ddd.account.domain.*;
+import io.hands.on.ddd.account.domain.event.AccountCreated;
+import io.hands.on.ddd.account.domain.event.AccountCreationFailed;
 import io.hands.on.ddd.common.annotation.hexagonal.InboundPort;
 import io.hands.on.ddd.common.annotation.hexagonal.UseCase;
 import io.hands.on.ddd.common.event.DomainEventsPublisher;

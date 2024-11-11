@@ -1,21 +1,30 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model;
+package io.hands.on.ddd.account.domain.event;
 
-import io.hands.on.ddd.common.annotation.domain.DomainRepository;
-import io.hands.on.ddd.common.annotation.hexagonal.OutboundPort;
+import io.hands.on.ddd.common.annotation.event.Event;
+import io.hands.on.ddd.common.event.DomainEvent;
+import io.hands.on.hands.sharedkernel.UserId;
+import java.util.Objects;
+import java.util.UUID;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Functional interface for persisting User aggregate.
+ * Account deleted event.
+ * @param eventId event identifier
+ * @param userId  user identifier
+ * @param message reason why operation failed
  */
-@OutboundPort
-@DomainRepository
-@FunctionalInterface
-public interface CreateAccountRepository {
-  Account create(Account account);
+@Event
+public record AccountUpgradeFailed(UUID eventId, UserId userId, String message)
+    implements DomainEvent {
+  public AccountUpgradeFailed {
+    Objects.requireNonNull(eventId);
+    Objects.requireNonNull(userId);
+    Objects.requireNonNull(message);
+  }
 }

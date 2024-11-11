@@ -1,30 +1,24 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model.event;
+package io.hands.on.ddd.account.domain;
 
-import io.hands.on.ddd.common.annotation.event.Event;
-import io.hands.on.ddd.common.event.DomainEvent;
-import io.hands.on.hands.sharedkernel.UserId;
+import io.hands.on.ddd.common.annotation.domain.DomainValueObject;
 import java.util.Objects;
-import java.util.UUID;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Account deleted event.
- * @param eventId event identifier
- * @param userId  user identifier
- * @param message reason why operation failed
+ * User's name value object.
+ * @param firstName user's first name
+ * @param lastName  user's last name
  */
-@Event
-public record AccountUpgradeFailed(UUID eventId, UserId userId, String message)
-    implements DomainEvent {
-  public AccountUpgradeFailed {
-    Objects.requireNonNull(eventId);
-    Objects.requireNonNull(userId);
-    Objects.requireNonNull(message);
+@DomainValueObject
+public record UserName(String firstName, String lastName) {
+  public UserName {
+    Objects.requireNonNull(firstName);
+    Objects.requireNonNull(lastName);
   }
 }

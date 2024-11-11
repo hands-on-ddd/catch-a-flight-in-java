@@ -1,27 +1,37 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model.event;
+package io.hands.on.ddd.account.domain;
 
-import io.hands.on.ddd.common.annotation.event.Event;
-import io.hands.on.ddd.common.event.DomainEvent;
+import io.hands.on.ddd.common.annotation.domain.DomainAggregate;
+import io.hands.on.hands.sharedkernel.AccountType;
+import io.hands.on.hands.sharedkernel.Email;
 import io.hands.on.hands.sharedkernel.UserId;
-import java.util.Objects;
-import java.util.UUID;
+import lombok.Builder;
+import lombok.Getter;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Account deleted event.
- * @param eventId event identifier
- * @param userId  user identifier
+ * Account aggregate. Guards all account's invariants.
  */
-@Event
-public record AccountDeleted(UUID eventId, UserId userId) implements DomainEvent {
-  public AccountDeleted {
-    Objects.requireNonNull(eventId);
-    Objects.requireNonNull(userId);
+@Getter
+@Builder
+@DomainAggregate
+public class Account {
+  UserId userId;
+  Email email;
+  Password password;
+  UserName userName;
+  AccountType accountType;
+
+  public void upgradeUser() {
+    switch (accountType) {
+      case PREMIUM ->
+          throw new AccountAlreadyUpgradedException(userId, "Premium user can't be upgraded");
+      case REGULAR -> accountType = AccountType.PREMIUM;
+    }
   }
 }

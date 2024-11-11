@@ -1,12 +1,11 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model.event;
+package io.hands.on.ddd.account.domain.event;
 
-import io.hands.on.ddd.account.model.UserName;
 import io.hands.on.ddd.common.annotation.event.Event;
 import io.hands.on.ddd.common.event.DomainEvent;
-import io.hands.on.hands.sharedkernel.Email;
+import io.hands.on.hands.sharedkernel.UserId;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -15,19 +14,14 @@ import java.util.UUID;
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Account creation failed event.
- * @param eventId  event identifier
- * @param userName user full name
- * @param email    user email
- * @param message  reason why operation failed
+ * Account deleted event.
+ * @param eventId event identifier
+ * @param userId  user identifier
  */
 @Event
-public record AccountCreationFailed(UUID eventId, UserName userName, Email email, String message)
-    implements DomainEvent {
-  public AccountCreationFailed {
+public record AccountDeleted(UUID eventId, UserId userId) implements DomainEvent {
+  public AccountDeleted {
     Objects.requireNonNull(eventId);
-    Objects.requireNonNull(userName);
-    Objects.requireNonNull(email);
-    Objects.requireNonNull(message);
+    Objects.requireNonNull(userId);
   }
 }

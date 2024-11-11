@@ -10,8 +10,8 @@ import static io.pmarat.catchflight.common.controller.ResponseBodyHelper.interna
 import static org.springframework.http.ResponseEntity.status;
 
 import io.hands.on.ddd.account.application.CreateAccountUseCase;
-import io.hands.on.ddd.account.model.Password;
-import io.hands.on.ddd.account.model.UserName;
+import io.hands.on.ddd.account.domain.Password;
+import io.hands.on.ddd.account.domain.UserName;
 import io.hands.on.hands.sharedkernel.Email;
 import io.hands.on.hands.sharedkernel.UserId;
 import jakarta.servlet.http.HttpServletRequest;

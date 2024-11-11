@@ -1,22 +1,17 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-package io.hands.on.ddd.account.model;
-
-import io.hands.on.ddd.common.annotation.domain.DomainRepository;
-import io.hands.on.ddd.common.annotation.hexagonal.OutboundPort;
-import io.hands.on.hands.sharedkernel.CurrentAccount;
-import io.hands.on.hands.sharedkernel.Email;
+package io.hands.on.ddd.account.domain;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * Functional interface for checking if User is already persisted.
+ * Signals too weak password when user's account is being created.
  */
-@OutboundPort
-@DomainRepository
-public interface FindCurrentAccountRepository {
-  CurrentAccount findByEmail(Email email);
+public class PasswordPolicyException extends RuntimeException {
+  public PasswordPolicyException(String message) {
+    super(message);
+  }
 }

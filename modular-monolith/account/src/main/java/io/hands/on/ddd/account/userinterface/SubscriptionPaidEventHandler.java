@@ -4,7 +4,7 @@
 package io.hands.on.ddd.account.userinterface;
 
 import io.hands.on.ddd.account.application.UpgradeAccountUseCase;
-import io.hands.on.ddd.account.model.event.AccountSubscriptionPaid;
+import io.hands.on.ddd.account.domain.event.AccountSubscriptionPaid;
 import io.pmarat.catchflight.common.annotations.hexagonal.MessageListenerAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.event.EventListener;
