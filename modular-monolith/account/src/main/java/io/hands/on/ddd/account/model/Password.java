@@ -1,11 +1,9 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.model;
 
 import io.hands.on.ddd.common.annotation.domain.DomainValueObject;
-
 import java.util.Objects;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -18,7 +16,7 @@ import java.util.Objects;
  */
 @DomainValueObject
 public record Password(String value) {
-    public Password {
-        Objects.requireNonNull(value);
-    }
+  public Password {
+    Objects.requireNonNull(value);
+  }
 }

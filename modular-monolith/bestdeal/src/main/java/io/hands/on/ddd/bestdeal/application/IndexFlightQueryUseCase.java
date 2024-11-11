@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.bestdeal.application;
 
 import io.hands.on.ddd.common.annotation.hexagonal.InboundPort;
@@ -22,15 +21,16 @@ import org.springframework.transaction.annotation.Transactional;
 @InboundPort
 @RequiredArgsConstructor
 public class IndexFlightQueryUseCase {
-    @Transactional
-    public IndexFlightQueryResult indexFlightQuery(IndexFlightQueryCommand indexFlightQueryCommand) {
-        throw new UnsupportedOperationException();
-    }
+  @Transactional
+  public IndexFlightQueryResult indexFlightQuery(IndexFlightQueryCommand indexFlightQueryCommand) {
+    throw new UnsupportedOperationException();
+  }
 
-    // ---------------------------------------------------------------------------------------------------------------------------------------------------------
-    // Static Types Section
-    // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // Static Types Section
+  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public record IndexFlightQueryCommand() {}
-    public interface IndexFlightQueryResult {}
+  public record IndexFlightQueryCommand() {}
+
+  public interface IndexFlightQueryResult {}
 }

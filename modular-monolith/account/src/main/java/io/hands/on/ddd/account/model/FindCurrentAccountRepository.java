@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.model;
 
 import io.hands.on.ddd.common.annotation.domain.DomainRepository;
@@ -19,5 +18,5 @@ import io.hands.on.hands.sharedkernel.Email;
 @OutboundPort
 @DomainRepository
 public interface FindCurrentAccountRepository {
-    CurrentAccount findByEmail(Email email);
+  CurrentAccount findByEmail(Email email);
 }

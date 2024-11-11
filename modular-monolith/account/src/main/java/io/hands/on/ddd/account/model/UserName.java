@@ -1,11 +1,9 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.model;
 
 import io.hands.on.ddd.common.annotation.domain.DomainValueObject;
-
 import java.util.Objects;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -19,8 +17,8 @@ import java.util.Objects;
  */
 @DomainValueObject
 public record UserName(String firstName, String lastName) {
-    public UserName {
-        Objects.requireNonNull(firstName);
-        Objects.requireNonNull(lastName);
-    }
+  public UserName {
+    Objects.requireNonNull(firstName);
+    Objects.requireNonNull(lastName);
+  }
 }

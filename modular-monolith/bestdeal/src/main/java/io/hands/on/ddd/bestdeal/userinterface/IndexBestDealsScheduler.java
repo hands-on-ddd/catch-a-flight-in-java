@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.bestdeal.userinterface;
 
 import io.hands.on.ddd.bestdeal.application.IndexBestDealsUseCase;
@@ -18,5 +17,5 @@ import lombok.RequiredArgsConstructor;
 @SchedulerAdapter
 @RequiredArgsConstructor
 class IndexBestDealsScheduler {
-    private final IndexBestDealsUseCase indexBestDealsUseCase;
+  private final IndexBestDealsUseCase indexBestDealsUseCase;
 }

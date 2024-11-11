@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.model;
 
 import io.hands.on.ddd.common.annotation.domain.DomainRepository;
@@ -18,5 +17,5 @@ import io.hands.on.ddd.common.annotation.hexagonal.OutboundPort;
 @DomainRepository
 @FunctionalInterface
 public interface CreateAccountRepository {
-    Account create(Account account);
+  Account create(Account account);
 }

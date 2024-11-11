@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.model;
 
 import io.hands.on.ddd.common.annotation.domain.DomainAggregate;
@@ -22,16 +21,17 @@ import lombok.Getter;
 @Builder
 @DomainAggregate
 public class Account {
-    UserId userId;
-    Email email;
-    Password password;
-    UserName userName;
-    AccountType accountType;
+  UserId userId;
+  Email email;
+  Password password;
+  UserName userName;
+  AccountType accountType;
 
-    public void upgradeUser() {
-        switch (accountType) {
-            case PREMIUM -> throw new AccountAlreadyUpgradedException(userId, "Premium user can't be upgraded");
-            case REGULAR -> accountType = AccountType.PREMIUM;
-        }
+  public void upgradeUser() {
+    switch (accountType) {
+      case PREMIUM ->
+          throw new AccountAlreadyUpgradedException(userId, "Premium user can't be upgraded");
+      case REGULAR -> accountType = AccountType.PREMIUM;
     }
+  }
 }

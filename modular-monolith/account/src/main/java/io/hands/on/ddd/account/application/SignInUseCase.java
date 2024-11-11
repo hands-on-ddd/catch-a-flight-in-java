@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.application;
 
 import io.hands.on.ddd.common.annotation.hexagonal.InboundPort;
@@ -24,22 +23,24 @@ import org.springframework.transaction.annotation.Transactional;
 @InboundPort
 @RequiredArgsConstructor
 public class SignInUseCase {
-    private final DomainEventsPublisher domainEventsPublisher;
+  private final DomainEventsPublisher domainEventsPublisher;
 
-    @Transactional
-    public SignInResult signIn(SignInCommand signInCommand) {
-        throw new UnsupportedOperationException();
-    }
+  @Transactional
+  public SignInResult signIn(SignInCommand signInCommand) {
+    throw new UnsupportedOperationException();
+  }
 
-    // ---------------------------------------------------------------------------------------------------------------------------------------------------------
-    // Static Types Section†
-    // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // Static Types Section†
+  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    public record SignInCommand() {}
+  public record SignInCommand() {}
 
-    public sealed interface SignInResult {
-        record Success(UserId userId) implements SignInResult {}
-        record AuthenticationFailure() implements SignInResult {}
-        record InternalFailure(Throwable cause) implements SignInResult {}
-    }
+  public sealed interface SignInResult {
+    record Success(UserId userId) implements SignInResult {}
+
+    record AuthenticationFailure() implements SignInResult {}
+
+    record InternalFailure(Throwable cause) implements SignInResult {}
+  }
 }

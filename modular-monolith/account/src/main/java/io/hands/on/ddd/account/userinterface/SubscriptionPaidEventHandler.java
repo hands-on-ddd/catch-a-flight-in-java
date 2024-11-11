@@ -1,7 +1,6 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.userinterface;
 
 import io.hands.on.ddd.account.application.UpgradeAccountUseCase;
@@ -20,10 +19,10 @@ import org.springframework.context.event.EventListener;
 @MessageListenerAdapter
 @RequiredArgsConstructor
 class SubscriptionPaidEventHandler {
-    private final UpgradeAccountUseCase upgradeAccountUseCase;
+  private final UpgradeAccountUseCase upgradeAccountUseCase;
 
-    @EventListener
-    void handle(AccountSubscriptionPaid accountSubscriptionPaid) {
-        throw new UnsupportedOperationException();
-    }
+  @EventListener
+  void handle(AccountSubscriptionPaid accountSubscriptionPaid) {
+    throw new UnsupportedOperationException();
+  }
 }

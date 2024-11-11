@@ -1,14 +1,12 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.infrastructure;
 
 import io.hands.on.hands.sharedkernel.AccountType;
+import java.util.UUID;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
-
-import java.util.UUID;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Implementation
@@ -26,11 +24,9 @@ import java.util.UUID;
  */
 @Table(name = "ACCOUNTS")
 public record AccountJdbcEntity(
-      @Id
-      UUID id,
-      String email,
-      String password,
-      String firstName,
-      String lastName,
-      AccountType accountType) {
-}
+    @Id UUID id,
+    String email,
+    String password,
+    String firstName,
+    String lastName,
+    AccountType accountType) {}

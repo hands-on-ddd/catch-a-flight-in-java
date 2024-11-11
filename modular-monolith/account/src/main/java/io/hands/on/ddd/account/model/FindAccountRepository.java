@@ -1,13 +1,11 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 package io.hands.on.ddd.account.model;
 
 import io.hands.on.ddd.common.annotation.domain.DomainRepository;
 import io.hands.on.ddd.common.annotation.hexagonal.OutboundPort;
 import io.hands.on.hands.sharedkernel.UserId;
-
 import java.util.Optional;
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -21,5 +19,5 @@ import java.util.Optional;
 @DomainRepository
 @FunctionalInterface
 public interface FindAccountRepository {
-    Optional<Account> load(UserId userId);
+  Optional<Account> load(UserId userId);
 }
