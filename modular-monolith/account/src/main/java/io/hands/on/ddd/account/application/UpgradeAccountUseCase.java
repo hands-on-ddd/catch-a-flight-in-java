@@ -60,12 +60,12 @@ public class UpgradeAccountUseCase {
         }
     }
 
-  public sealed interface UpgradeUserResult {
-    record Success() implements UpgradeUserResult {}
-    record UserNotFoundFailure(String message) implements UpgradeUserResult {}
-    record UserAlreadyUpgradedFailure(String message) implements UpgradeUserResult {}
-    record InternalFailure(Throwable cause) implements UpgradeUserResult {}
-  }
+    public sealed interface UpgradeUserResult {
+        record Success() implements UpgradeUserResult {}
+        record UserNotFoundFailure(String message) implements UpgradeUserResult {}
+        record UserAlreadyUpgradedFailure(String message) implements UpgradeUserResult {}
+        record InternalFailure(Throwable cause) implements UpgradeUserResult {}
+    }
 
     // -------------------------------------------------------------------------------------------------------------------
     // Private Section
