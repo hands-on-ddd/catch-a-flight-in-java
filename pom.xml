@@ -95,10 +95,10 @@
                             <googleJavaFormat>
                                 <version>1.24.0</version>
                                 <reflowLongStrings>true</reflowLongStrings>
-                                <formatJavadoc>false</formatJavadoc>
+                                <formatJavadoc>true</formatJavadoc>
                             </googleJavaFormat>
                             <licenseHeader>
-                                <file>../license-header.txt</file>
+                                <file>../LICENSE-HEADER.txt</file>
                             </licenseHeader>
                         </java>
                     </configuration>

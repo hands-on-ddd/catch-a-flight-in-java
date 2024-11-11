@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.bestdeal.userinterface;
 
 import static io.hands.on.ddd.bestdeal.BestDealsFlightConfiguration.MODULE_PREFIX;
@@ -18,9 +18,7 @@ import org.springframework.context.annotation.Configuration;
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-/**
- * Spring configuration for user interface layer in the module.
- */
+/** Spring configuration for user interface layer in the module. */
 @Configuration(value = USER_INTERFACE_CONFIGURATION, proxyBeanMethods = false)
 public class UserInterfaceConfiguration {
   @Bean(FLIGHT_QUERY_HANDLER)

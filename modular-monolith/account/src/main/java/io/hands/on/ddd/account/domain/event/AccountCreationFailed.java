@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.domain.event;
 
 import io.hands.on.ddd.account.domain.UserName;
@@ -16,10 +16,11 @@ import java.util.UUID;
 
 /**
  * Account creation failed event.
- * @param eventId  event identifier
+ *
+ * @param eventId event identifier
  * @param userName user full name
- * @param email    user email
- * @param message  reason why operation failed
+ * @param email user email
+ * @param message reason why operation failed
  */
 @Event
 public record AccountCreationFailed(UUID eventId, UserName userName, Email email, String message)

@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.infrastructure;
 
 import io.hands.on.hands.sharedkernel.AccountType;
@@ -14,13 +14,14 @@ import org.springframework.data.relational.core.mapping.Table;
 
 /**
  * Account entity (Spring Data JDBC).
- * @param id          primary key
- * @param email       email provided at registration
- * @param password    encrypted password
- * @param firstName   user's first name
- * @param lastName    user's last name
+ *
+ * @param id primary key
+ * @param email email provided at registration
+ * @param password encrypted password
+ * @param firstName user's first name
+ * @param lastName user's last name
  * @param accountType type of the user (Regular or Premium, at the moment)
- * @param version     version for handling optimistic locking
+ * @param version version for handling optimistic locking
  */
 @Table(name = "ACCOUNTS")
 public record AccountJdbcEntity(

@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.domain;
 
 import io.hands.on.ddd.common.annotation.domain.DomainValueObject;
@@ -12,8 +12,9 @@ import java.util.Objects;
 
 /**
  * User's name value object.
+ *
  * @param firstName user's first name
- * @param lastName  user's last name
+ * @param lastName user's last name
  */
 @DomainValueObject
 public record UserName(String firstName, String lastName) {

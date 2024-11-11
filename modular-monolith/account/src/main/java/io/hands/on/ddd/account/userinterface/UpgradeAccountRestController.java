@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.userinterface;
 
 import static io.hands.on.ddd.account.application.UpgradeAccountUseCase.UpgradeUserResult.*;
@@ -26,9 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-/**
- * REST API controller for POST /api/v1/account/{accountId}/upgrade endpoint.
- */
+/** REST API controller for POST /api/v1/account/{accountId}/upgrade endpoint. */
 @Slf4j
 @RestController
 @RequiredArgsConstructor

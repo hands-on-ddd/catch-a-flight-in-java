@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.domain.event;
 
 import io.hands.on.ddd.common.annotation.event.Event;
@@ -15,8 +15,9 @@ import java.util.UUID;
 
 /**
  * Account subscription paid event.
+ *
  * @param eventId event identifier
- * @param userId  user identifier
+ * @param userId user identifier
  */
 @Event
 public record AccountSubscriptionPaid(UUID eventId, UserId userId) implements DomainEvent {

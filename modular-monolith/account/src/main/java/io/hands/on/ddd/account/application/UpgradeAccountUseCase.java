@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.application;
 
 import io.hands.on.ddd.account.domain.AccountAlreadyUpgradedException;
@@ -18,13 +18,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.transaction.annotation.Transactional;
 
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Implementation
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 
-/**
- * Use case for upgrading user (from Regular to Premium).
- */
+/** Use case for upgrading user (from Regular to Premium). */
 @Slf4j
 @UseCase
 @InboundPort
@@ -58,9 +56,9 @@ public class UpgradeAccountUseCase {
     }
   }
 
-  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
   // Private Section
-  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
 
   private void emitUserUpgraded(UserId userId) {
     domainEventsPublisher.publish(userUpgradedEvent(userId));
@@ -78,9 +76,9 @@ public class UpgradeAccountUseCase {
     return new AccountUpgradeFailed(UUID.randomUUID(), userId, message);
   }
 
-  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
   // Static Types Section
-  // ---------------------------------------------------------------------------------------------------------------------------------------------------------
+  // -------------------------------------------------------------------------------------------------------------------
 
   public record UpgradeUserCommand(UserId userId) {
     public UpgradeUserCommand {
@@ -88,13 +86,18 @@ public class UpgradeAccountUseCase {
     }
   }
 
+  /** Upgrade user operation result */
   public sealed interface UpgradeUserResult {
+    /** Success response */
     record Success() implements UpgradeUserResult {}
 
+    /** User was not found in the system */
     record UserNotFoundFailure(String message) implements UpgradeUserResult {}
 
+    /** User is already upgraded to premium */
     record UserAlreadyUpgradedFailure(String message) implements UpgradeUserResult {}
 
+    /** Unexpected internal failture */
     record InternalFailure(Throwable cause) implements UpgradeUserResult {}
   }
 }

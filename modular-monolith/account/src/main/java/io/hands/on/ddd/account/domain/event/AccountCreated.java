@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.domain.event;
 
 import io.hands.on.ddd.account.domain.UserName;
@@ -18,11 +18,12 @@ import java.util.UUID;
 
 /**
  * Account created event.
- * @param eventId     event identifier
- * @param userId      user identifier
- * @param userName    user name
+ *
+ * @param eventId event identifier
+ * @param userId user identifier
+ * @param userName user name
  * @param accountType user type
- * @param email       user email
+ * @param email user email
  */
 @Event
 public record AccountCreated(

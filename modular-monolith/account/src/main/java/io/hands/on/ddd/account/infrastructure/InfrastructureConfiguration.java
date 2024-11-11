@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.infrastructure;
 
 import static io.hands.on.ddd.account.AccountUserConfiguration.MODULE_PREFIX;
@@ -16,9 +16,7 @@ import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-/**
- * Spring configuration for infrastructure layer in the module.
- */
+/** Spring configuration for infrastructure layer in the module. */
 @EntityScan
 @EnableJdbcRepositories
 @Configuration(value = INFRASTRUCTURE_CONFIGURATION, proxyBeanMethods = false)

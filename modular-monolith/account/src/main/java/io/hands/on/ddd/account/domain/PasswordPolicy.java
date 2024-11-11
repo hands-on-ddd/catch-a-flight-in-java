@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.account.domain;
 
 import static io.hands.on.ddd.common.policy.DomainPolicyOutput.*;
@@ -15,8 +15,8 @@ import java.util.function.Function;
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /**
- * User's password policies (checked when account is created).
- * It's composed of set of functions, passed to UserFactory for password policy validations.
+ * User's password policies (checked when account is created). It's composed of set of functions,
+ * passed to UserFactory for password policy validations.
  */
 @DomainPolicy
 interface PasswordPolicy extends Function<Password, DomainPolicyOutput> {

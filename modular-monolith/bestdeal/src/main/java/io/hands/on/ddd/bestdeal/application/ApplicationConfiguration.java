@@ -1,6 +1,6 @@
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 // Copyright (c) 2024 Piotr Marat
-// -------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------------------------------------
 package io.hands.on.ddd.bestdeal.application;
 
 import static io.hands.on.ddd.bestdeal.BestDealsFlightConfiguration.MODULE_PREFIX;
@@ -14,9 +14,7 @@ import org.springframework.context.annotation.Configuration;
 // Implementation
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-/**
- * Spring configuration for application layer in the module.
- */
+/** Spring configuration for application layer in the module. */
 @Configuration(value = APPLICATION_CONFIGURATION, proxyBeanMethods = false)
 public class ApplicationConfiguration {
   @Bean(BeanNames.INDEX_BESTDEALS_USECASE)
